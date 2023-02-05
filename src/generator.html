@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="position" placeholder="Enter position" />
+    <input type="text" id="newEl" placeholder="Enter New Element" />
+    <button onclick="insertEl()">Insert</button>
+    <script>
+      // Traversal and Accessing
+      // let data = [9, 45, 2, 8, 45, 60, 70, 46, 43];
+      // for (let i = 0; i < data.length; i++) {
+      //   document.write(`Array ${i} is ${data[i]}<br/>`);
+      // }
+      // let x = 8;
+      // document.write(data[x]);
+      // function getElement() {
+      //   let el = document.getElementById("element").value;
+      //   if (el < data.length) {
+      //     alert(data[el]);
+      //   } else {
+      //     alert("please enter valid input");
+      //   }
+      // }
+      // insert
+      // let data = [9, 45, 2, 8, 45, 60, 70, 46, 43];
+      // let newEl = 70;
+      // let position = 3;
+
+      // for (let i = data.length - 1; i >= 0; i--) {
+      //   // document.write(data[i]);
+      //   if (i >= position) {
+      //     data[i + 1] = data[i];
+      //     if (i == position) {
+      //       data[i] = newEl;
+      //     }
+      //   }
+      // }
+      // console.log(data);
+
+      // function insertEl() {
+      //   let data = [9, 45, 2, 8, 45, 60, 70, 46, 43];
+      //   let newEl = document.getElementById("newEl").value;
+      //   let position = document.getElementById("position").value;
+
+      //   for (let i = data.length - 1; i >= 0; i--) {
+      //     // document.write(data[i]);
+      //     if (i >= position) {
+      //       data[i + 1] = data[i];
+      //       if (i == position) {
+      //         data[i] = newEl;
+      //       }
+      //     }
+      //   }
+      //   console.log(data);
+      // }
+      // Delete
+      // let data = [23, 20, 30, 40, 50, 60, 70, 80];
+      // position = 3;
+      // for (let i = position; i < data.length - 1; i++) {
+      //   data[i] = data[i + 1];
+      // }
+      // data.length = data.length - 1;
+      // console.log(data);
+
+      // Search
+
+      // let data = [10, 20, 30, 40, 50, 60, 70];
+      // let item = 60;
+      // let index = undefined;
+      // for (let i = 0; i < data.length - 1; i++) {
+      //   if (data[i] === item) {
+      //     index = i;
+      //   }
+      // }
+      // console.log(index);
+
+      // Merging of Two Array
+      // let array1 = [1, 2, 3, 4, 5, 6];
+      // let array2 = [7, 8, 9, 10, 11, 12];
+      // let array3 = [];
+
+      // for (let i = 0; i < array1.length; i++) {
+      //   array3[i] = array1[i];
+      // }
+      // for (let i = 0; i < array2.length; i++) {
+      //   array3[array1.length + i] = array2[i];
+      // }
+      // console.log(array3);
+
+      // Array Sorting
+
+      // let data = [40, 30, 12, 25];
+      // for (let i = 0; i < data.length; i++) {
+      //   for (let j = 0; j < data.length; j++) {
+      //     if (data[j] > data[j + 1]) {
+      //       let temp = data[j];
+      //       data[j] = data[j + 1];
+      //       data[j + 1] = temp;
+      //     }
+      //   }
+      // }
+      // console.log(data);
+
+      // Recursion Data Structure
+
+      // function apple(x) {
+      //   console.log(x);
+      //   if (x < 10) {
+      //     apple(x + 1);
+      //   }
+      // }
+      // let data = 0;
+      // apple(data);
+
+      // let data = [20, 35, 30, 24, 23, 36, 48, 55];
+      // let newArr = [];
+      // let count = 0;
+
+      // for (let i = 0; i < data.length; i++) {
+      //   if (data[i] % 2 == 0) {
+      //     newArr.push(data[i] * 2);
+      //     count++;
+      //   }
+      // }
+      // console.log(newArr);
+
+      //  Reverse Array with recursion
+
+      // let data = [3, 4, 7, 8, 6, 9];
+      // data.reverse();
+      // console.log(data);
+      // let temp;
+      // function customReverse(data, start, end) {
+      //   console.log(data);
+      //   if (start <= end) {
+      //     temp = data[start];
+      //     data[start] = data[end];
+      //     data[end] = temp;
+      //     customReverse(data, start + 1, end - 1);
+      //   }
+      // }
+      // customReverse(data, 0, data.length - 1);
+
+      // Stack data structure
+
+      // let data = [];
+      // let currrentSize = data.length;
+      // let max = 5;
+      // function push(newVal) {
+      //   if (currrentSize >= max) {
+      //     alert("Stack is full you cannot add" + newVal);
+      //   }
+      //   data[currrentSize] = newVal;
+      //   currrentSize += 1;
+      // }
+      // push(2);
+      // push(7);
+      // push(6);
+      // push(8);
+      // push(12);
+      // push(9);
+
+      // let str = "Anand";
+      // str = str.split("");
+      // console.log(str);
+
+      // let str = "Hello, how are you";
+      // let temp = str.split("").reverse().join("");
+      // console.log(temp);
+
+      fetch("https://api.covid19api.com/summary")
+        .then((apidata) => {
+          return apidata.json();
+        })
+        .then((actualdata) => {
+          console.log(actualdata);
+        });
+    </script>
+  </body>
+</html>

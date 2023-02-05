@@ -4,13 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Page</title>
+    <title>Array Traversing and Accessing</title>
   </head>
   <body>
-    This is a contact file
-    <h1>this is new feature added</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, aliquid.
-    </p>
+    <input type="text" id="element" />
+    <button onclick="getElement()">Find Value</button>
+    <script>
+      let data = [2, 4, 6, 5, 3, 6, 8, 5];
+      // for (let i = 0; i < data.length; i++) {
+      //   document.write(`${data[i]}<br/>`);
+      // }
+
+      // let x = 5;
+      // document.write(data[x]);
+
+      function getElement() {
+        let el = document.getElementById("element").value;
+        if (el < data.length && typeof parseInt(el) === "number" && el >= 0) {
+          alert(data[el]);
+        } else {
+          alert("No find data");
+        }
+      }
+    </script>
   </body>
 </html>

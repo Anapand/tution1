@@ -1,0 +1,14 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+button {
+  margin: 5px;
+  background-color: greenyellow;
+}
+h1 {
+  color: blue;
+}

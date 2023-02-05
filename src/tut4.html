@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deep and Shallow copy</title>
+  </head>
+  <body>
+    <script>
+      //   let obj = {
+      //     name: "Manoj",
+      //   };
+      //   //   let user = Object.assign([], obj);
+      //   let user = { ...obj };
+      //   user.name = "Mohit";
+      //   console.log(obj);
+
+      //   let obj = {
+      //     name: "Manoj",
+      //     address: {
+      //       city: "Noida",
+      //       state: "UP",
+      //     },
+      //   };
+
+      //   let user = JSON.parse(JSON.stringify(obj));
+      //   user.name.city = "Gurgaon";
+      //   console.log(obj);
+      //   console.log(user);
+
+      let data = [2, 3, 5, 6, 2, 3, 6];
+      //   data.length = 4;
+      //   console.log(data);
+
+      //   let sum = data.reduce((x, y) => x + y);
+      //   console.log(sum);
+
+      //   let unique = new Set(data);
+      //   console.log([...unique]);
+
+      //   let x = 10;
+      //   y = 40;
+      //   x = ((y += 20), x);
+      //   console.log(y);
+
+      //   let x = 20,
+      //     y = 30;
+      //   [x, y] = [y, x];
+      //   console.log(x);
+      //   console.log(y);
+
+      //   function test() {
+      //     return 1 + 2;
+      //   }
+      //   function hello() {
+      //     let data = function () {
+      //       return "hof";
+      //     };
+      //     return data;
+      //   }
+      //   hello(test);
+
+      //   function outer() {
+      //     let outerValue = 100;
+      //     return function test() {
+      //       let a = 300;
+      //       return function inner() {
+      //         return a * outerValue;
+      //       };
+      //     };
+      //   }
+      //   let test = outer();
+      //   let inner = test();
+      //   console.dir(inner);
+
+      let student = {
+        firstName: "Anand",
+        lastName: "Pandey",
+        age: 36,
+      };
+      let teacher = {
+        firstName: "Mohit",
+        lastName: "singh",
+        age: 37,
+      };
+      function getEmail() {
+        return `my age is ${this.age} ${this.firstName}.${this.lastName}@test.com`;
+      }
+      console.log(getEmail.call(teacher));
+      console.log(getEmail.call(student));
+    </script>
+  </body>
+</html>
